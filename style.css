@@ -12,6 +12,52 @@
     color: #2d2d2d;
     padding: 0 1rem;
   }
+
+  .content-box {
+    background-color: #fffef6;
+    border-left: 4px solid #2c5f2d;
+    padding: 1rem 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(44, 95, 45, 0.1);
+  }
+/* Flex side-by-side boxes */
+.flex-box {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .flex-box .content-box {
+    flex: 1 1 48%;
+  }
+  
+  /* Grid layout */
+  .grid-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  /* Timeline/stacked section */
+  .timeline .content-box {
+    margin-bottom: 1.5rem;
+    border-left: 6px solid #97bc62;
+  }
+  
+  /* Quote box */
+  .quote-box blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+    background-color: #fffef6;
+    border-left: 4px solid #2c5f2d;
+    padding: 1.2rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    color: #2d2d2d;
+  }
+    
   
   /* Header styles */
   header {
