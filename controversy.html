@@ -3,43 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Controversies & Criticism</title>
+  <title>Controversies and Criticisms</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="logo.png" type="image/png">
-
+  <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/logo.png" type="image/png">
 </head>
+
 <body>
-  <header>
-    <h1>Commentary Channels on YouTube</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="influence.html">Influence</a></li>
-        <li><a href="content.html">Content</a></li>
-        <li><a href="controversy.html">Controversy</a></li>
-        <li><a href="future.html">Future</a></li>
-        <li><a href="references.html">References</a></li>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="logo png">
+      </div>
+      <div class="mobile-menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="influence.html">Influence</a></li>
+          <li><a href="content.html">Content</a></li>
+          <li><a href="controversy.html">Controversy</a></li>
+          <li><a href="future.html">The Future</a></li>
+          <li><a href="references.html">References</a></li>
 
-      </ul>
-    </nav>
-  </header>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <section>
-      <h2>Controversies and Criticisms</h2>
-  
-      <h3>Ethical Concerns</h3>
-      <p>Some commentary channels are criticized for creating toxic environments or engaging in online harassment under the guise of critique. An analysis on arXiv examined the monetization of controversial content, finding that while such content can increase engagement, it often correlates with higher toxicity, raising ethical questions about balancing monetization and responsible content creation.</p>
-  
-      <h3>Impact on Mental Health</h3>
-      <p>The pressure to stay relevant and handle public scrutiny can affect creators' mental health. High-profile YouTuber MrBeast discussed the challenges of balancing content creation with personal well-being, noting that prioritizing mental health might have limited his success.</p>
-      <p>Also, research from Griffith University indicates that frequent YouTube users may experience higher levels of loneliness, anxiety, and depression, suggesting that both creators and viewers can face mental health challenges related to the platform.</p>
-    </section>
-  </main>
-  
+    <div class="main-title">
+      <h1>CONTROVERSIES<br>AND<br>CRITICISMS</h1>
+      <div class="divider"></div>
+    </div>
+
+    <!-- First Section: Image left, Ethical Concerns text right -->
+    <div class="content-section">
+      <div class="image-placeholder">
+        <img src="images/comments.png" alt="ethical concerns image" class="image-placeholder">
+      </div>
+      <div class="content-text">
+        <h2>Ethical Concerns</h2>
+        <div class="collapse-trigger">
+          <span class="plus-icon"></span> Show more
+        </div>
+        <div class="collapse-content">
+          <p>Some commentary channels are criticized for creating toxic environments or engaging in online harassment under the guise of critique.</p>
+          <p>An analysis on arXiv examined the monetization of controversial content, finding that while such content can increase engagement, it often correlates with higher toxicity, raising ethical questions about balancing monetization and responsible content creation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Section: Mental Health text left, Image right -->
+    <div class="content-section">
+      <div class="content-text">
+        <h2>Impact on Mental Health</h2>
+        <div class="collapse-trigger">
+          <span class="plus-icon"></span> Show more
+        </div>
+        <div class="collapse-content">
+          <p>The pressure to stay relevant and deal with public attention can take a toll on creators' mental health.</p>
+          <p>MrBeast has admitted that focusing on his well-being might have slowed his success.</p>
+          <p>Research from Griffith University also shows that frequent YouTube use is linked to higher levels of loneliness, anxiety, and depression, affecting both creators and viewers.</p>
+        </div>
+      </div>
+      <div class="image-placeholder">
+        <img src="images/mental.jpg" alt="mental health image" class="image-placeholder">
+      </div>
+    </div>
+
+  </div>
 
   <footer>
-    <p>&copy; 2025  Kylie Higgins</p>
+    <p>© 2025 KYLIE HIGGINS</p>
   </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-icon').addEventListener('click', function() {
+      const nav = document.querySelector('nav ul');
+      if (nav.style.display === 'flex') {
+        nav.style.display = 'none';
+      } else {
+        nav.style.display = 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.position = 'absolute';
+        nav.style.top = '80px';
+        nav.style.right = '15px';
+        nav.style.backgroundColor = '#000';
+        nav.style.padding = '15px';
+        nav.style.zIndex = '100';
+      }
+    });
+
+    // Collapsible content (for mobile)
+    const collapseTriggers = document.querySelectorAll('.collapse-trigger');
+    collapseTriggers.forEach(trigger => {
+      trigger.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        if (content.classList.contains('active')) {
+          content.classList.remove('active');
+          this.innerHTML = '<span class="plus-icon"></span> Show more';
+        } else {
+          content.classList.add('active');
+          this.innerHTML = 'Show less';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
