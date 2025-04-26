@@ -135,7 +135,7 @@ nav a {
     margin-bottom: 20px;
     text-transform: uppercase;
     position: relative;
-    display: inline-block; /* ADD THIS */
+    display: inline-block; 
     text-align: center; /* stays clean */
 }
 
@@ -352,6 +352,6 @@ footer {
   }
 
   .collapse-content.active {
-    max-height: 3000px; /* big enough for your full list */
+    max-height: 3000px; /* big enough f */
   }
 }
