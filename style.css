@@ -30,8 +30,9 @@ header {
 }
 
 .logo {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
+    margin-left: -100px;
 }
 
 .logo img {
@@ -134,17 +135,22 @@ nav a {
     margin-bottom: 20px;
     text-transform: uppercase;
     position: relative;
+    display: inline-block; /* ADD THIS */
+    text-align: center; /* stays clean */
 }
 
 .content-text h2::after {
     content: "";
     position: absolute;
     bottom: -5px;
-    left: 0;
-    width: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
     height: 2px;
     background-color: #e63946;
 }
+
+
 
 .content-text p {
     margin-bottom: 15px;
@@ -292,4 +298,60 @@ footer {
 
 .content-text ul li::marker {
     color: #e63946; 
+}
+
+.references-section {
+    padding: 40px 20px;
+    color: white;
+    text-align: left;
+}
+
+.reference-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.reference-list li {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.reference-list a {
+    color: #e63946;
+    text-decoration: underline;
+}
+/* Collapsible References for Mobile */
+.collapse-trigger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-bottom: 15px;
+    padding: 0;
+    text-align: left;
+}
+
+.collapse-content {
+    display: block;
+}
+
+/* Only collapse on smaller screens */
+@media (max-width: 768px) {
+  .collapse-trigger {
+    display: block;
+    text-align: center;
+  }
+
+  .collapse-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .collapse-content.active {
+    max-height: 3000px; /* big enough for your full list */
+  }
 }

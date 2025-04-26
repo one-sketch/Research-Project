@@ -3,46 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Future & Conclusion</title>
+  <title>Future Trends and Conclusion</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="logo.png" type="image/png">
-
+  <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/logo.png" type="image/png">
 </head>
+
 <body>
-  <header>
-    <h1>Commentary Channels on YouTube</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="influence.html">Influence</a></li>
-        <li><a href="content.html">Content</a></li>
-        <li><a href="controversy.html">Controversy</a></li>
-        <li><a href="future.html">Future</a></li>
-        <li><a href="references.html">References</a></li>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="logo png">
+      </div>
+      <div class="mobile-menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="influence.html">Influence</a></li>
+          <li><a href="content.html">Content</a></li>
+          <li><a href="controversy.html">Controversy</a></li>
+          <li><a href="future.html">The Future</a></li>
+          <li><a href="references.html">References</a></li>
 
-      </ul>
-    </nav>
-  </header>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <section>
-      <h2>Future Trends and Conclusion</h2>
-  
-      <h3>Evolving Content</h3>
-      <ol>
-        <li><strong>Multimedia Integration:</strong> Using various media forms to create more engaging content.</li>
-        <li><strong>Interactive Content:</strong> Encouraging audience participation through live streams, polls, and Q&A sessions.</li>
-        <li><strong>Cross-Platform Presence:</strong> Expanding reach by engaging audiences on multiple social media platforms.</li>
-      </ol>
-  
-      <h3>Sustainability and Ethics</h3>
-      <p>As the platform evolves, there's a growing focus on ethical content creation and the long-term sustainability of commentary channels. Creators are becoming more aware of their influence and the responsibilities that come with it.</p>
-    </section>
-  </main>
-  
+    <div class="main-title">
+      <h1>FUTURE TRENDS<br>AND<br>CONCLUSION</h1>
+      <div class="divider"></div>
+    </div>
+
+    <div class="content-section">
+      <div class="image-placeholder">
+        <img src="images/future.jpg" alt="evolving content image" class="image-placeholder">
+      </div>
+      <div class="content-text">
+        <h2>Evolving Content</h2>
+        <p>The commentary genre is changing with audience preferences and platform algorithms. New trends include:</p>
+        
+        <div class="collapse-trigger">
+          <span class="plus-icon"></span> CLICK HERE FOR BULLET POINTS
+        </div>
+        
+        <div class="collapse-content">
+          <ul>
+            <li>Short-form commentary videos</li>
+            <li>Greater focus on positivity and community-building</li>
+            <li>Increased transparency with audiences</li>
+            <li>Ethical sponsorship and brand partnerships</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Section: Sustainability and Ethics full width -->
+    <div class="content-section" style="flex-direction: column; text-align: center;">
+      <div class="content-text" style="width: 100%;">
+        <h2>Sustainability<br>and Ethics</h2>
+        <p>As the platform evolves, there's a growing focus on ethical content creation and the long-term sustainability of commentary channels. Creators are becoming more aware of their influence and the responsibilities that come with it.</p>
+      </div>
+    </div>
+
+  </div>
 
   <footer>
-    <p>&copy; 2025  Kylie Higgins</p>
+    <p>© 2025 KYLIE HIGGINS</p>
   </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-icon').addEventListener('click', function() {
+      const nav = document.querySelector('nav ul');
+      if (nav.style.display === 'flex') {
+        nav.style.display = 'none';
+      } else {
+        nav.style.display = 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.position = 'absolute';
+        nav.style.top = '80px';
+        nav.style.right = '15px';
+        nav.style.backgroundColor = '#000';
+        nav.style.padding = '15px';
+        nav.style.zIndex = '100';
+      }
+    });
+
+    // Collapsible bullet points
+    const collapseTriggers = document.querySelectorAll('.collapse-trigger');
+    collapseTriggers.forEach(trigger => {
+      trigger.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        if (content.classList.contains('active')) {
+          content.classList.remove('active');
+          this.innerHTML = '<span class="plus-icon"></span> CLICK HERE FOR BULLET POINTS';
+        } else {
+          content.classList.add('active');
+          this.innerHTML = 'Show less';
+        }
+      });
+    });
+  </script>
 </body>
+</html>
+
 </html>
