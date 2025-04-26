@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+header {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    text-decoration: underline;
+    text-decoration-color: #8c1c13;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Main Title */
+.main-title {
+    text-align: center;
+    margin: 80px 0 40px;
+}
+
+.main-title h1 {
+    font-family: 'Aboreto', cursive;
+    font-size: 4rem;
+    color: white;
+    text-shadow: 3px 3px  rgba(230, 57, 70, 0.6);
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+
+}
+
+.main-title h1 span {
+    color: #e63946;
+}
+
+.divider {
+    width: 80%;
+    height: 1px;
+    background-color: #ffffff;
+    margin: 0 auto;
+}
+
+/* Content Sections */
+.content-section {
+    display: flex;
+    flex-direction: row;
+    margin: 60px 0;
+}
+
+.content-section:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.image-placeholder {
+    width: auto;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.cross-lines {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.cross-lines::before,
+.cross-lines::after {
+    content: "";
+    position: absolute;
+    background-color: #888;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: rotate(45deg) translateX(-50%);
+}
+
+.cross-lines::after {
+    transform: rotate(-45deg) translateX(-50%);
+}
+
+.content-text {
+    width: 55%;
+    padding: 0 30px;
+}
+
+.content-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.content-text h2::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background-color: #e63946;
+}
+
+.content-text p {
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #8c1c13;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Mobile Navigation */
+.mobile-menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.mobile-menu-icon span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+}
+
+/* Collapsible elements for mobile */
+.collapse-trigger {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.collapse-content {
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Navigation adjustments */
+    .mobile-menu-icon {
+        display: flex;
+    }
+    
+    nav ul {
+        display: none;
+    }
+    
+    /* Content adjustments */
+    .content-section,
+    .content-section:nth-child(odd) {
+        flex-direction: column;
+    }
+    
+    .image-placeholder,
+    .content-text {
+        width: 100%;
+    }
+    
+    .image-placeholder {
+        order: -1; /* Always place image on top */
+        margin-bottom: 20px;
+    }
+    
+    .content-text {
+        padding: 0;
+    }
+    
+    .content-text h2 {
+        padding-bottom: 10px;
+    }
+    
+    .collapse-trigger {
+        display: block;
+    }
+    
+    .collapse-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .collapse-content.active {
+        max-height: 500px;
+    }
+    
+    .main-title h1 {
+        font-size: 2.5rem;
+    }
+    
+    /* Add a plus sign before collapsed content */
+    .plus-icon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        margin-right: 10px;
+    }
+    
+    .plus-icon::before,
+    .plus-icon::after {
+        content: '';
+        position: absolute;
+        background-color: #fff;
+    }
+    
+    .plus-icon::before {
+        width: 100%;
+        height: 2px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    
+    .plus-icon::after {
+        width: 2px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
