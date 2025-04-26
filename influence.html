@@ -5,39 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Influence on Public Opinion</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.png" type="image/png">
-
+  <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/logo.png" type="image/png">
 </head>
+
 <body>
-  <header>
-    <h1>Commentary Channels on YouTube</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="influence.html">Influence</a></li>
-        <li><a href="content.html">Content</a></li>
-        <li><a href="controversy.html">Controversy</a></li>
-        <li><a href="future.html">Future</a></li>
-        <li><a href="references.html">References</a></li>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="logo png">
+      </div>
+      <div class="mobile-menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="influence.html">Influence</a></li>
+          <li><a href="content.html">Content</a></li>
+          <li><a href="controversy.html">Controversy</a></li>
+          <li><a href="future.html">The Future</a></li>
+        </ul>
+      </nav>
+    </header>
 
-      </ul>
-    </nav>
-  </header>
+    <div class="main-title">
+      <h1>INFLUENCE<br>ON<br>PUBLIC OPINION</h1>
+      <div class="divider"></div>
+    </div>
 
-  <main>
-    <section>
-      <h2>Influence on Public Opinion</h2>
-      <h3>Shaping Views</h3>
-      <p>Commentary channels can influence public opinion by presenting information with their own interpretations. Research in First Monday examined YouTube's role in politics and current events, finding that alternative news channels attract significant attention and often act as citizen journalists or political commentators.</p>
-  
-      <h3>Echo Chambers and Polarization</h3>
-      <p>YouTube's recommendation algorithms can create echo chambers, where users mostly see content that aligns with their existing beliefs, potentially deepening societal divisions. A study in SAGE Open introduced the Toxicity Polarization Score to measure polarization in YouTube comments, suggesting that certain content fosters unbalanced and toxic discussions.</p>
-    </section>
-  </main>
-  
+    <!-- First Section: text left, image right -->
+    <div class="content-section">
+      <div class="content-text">
+        <h2>Shaping Perspectives</h2>
+        <div class="collapse-trigger">
+          <span class="plus-icon"></span> Show more
+        </div>
+        <div class="collapse-content">
+          <p>These creators often mix personal opinions with selective facts, which can influence how viewers interpret events or individuals.</p>
+          <p>Because they speak directly to the audience in a casual and relatable tone, their points often feel more trustworthy than traditional media sources. Over time, regular viewers may adopt the creator’s stance on issues without realizing how much their views have been shaped.</p>
+        </div>
+      </div>
+      <div class="image-placeholder">
+        <img src="images/danny.webp" alt="shaping perspectives image" class="image-placeholder">
+      </div>
+    </div>
+
+    <!-- Second Section: image left, text right -->
+    <div class="content-section reverse">
+      <div class="image-placeholder">
+        <img src="images/echo_chamber.webp" alt="polarization echo chamber image" class="image-placeholder">
+      </div>
+      <div class="content-text">
+        <h2>Polarization and Echo Chamber</h2>
+        <div class="collapse-trigger">
+          <span class="plus-icon"></span> Show more
+        </div>
+        <div class="collapse-content">
+          <p>The algorithm-driven nature of YouTube’s content recommendations can lead to echo chambers, where users are mostly shown content that supports their existing beliefs. As viewers engage with videos that align with their opinions, the platform continues suggesting similar content, reducing exposure to opposing viewpoints.</p>
+          <p>This cycle can intensify beliefs, make people less open to different perspectives, and increase political or cultural polarization online.</p>
+          <p>Commentary channels play a role in this process when they repeatedly reinforce a particular stance or ideology.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" style="flex-direction: column; align-items: center;">
+      <h2 style="text-align: center; margin-bottom: 20px;">Trust in Information Sources</h2>
+      <div class="image-placeholder" style="width: 90%; height: auto;">
+        <img src="images/trust_sources_horizontal.png" alt="Trust in Information Sources Graph" style="width: 100%; height: auto; border-radius: 25px;">
+      </div>
+    </div>
+    
+
+  </div>
 
   <footer>
-    <p>&copy; 2025  Kylie Higgins</p>
+    <p>© 2025 KYLIE HIGGINS</p>
   </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-icon').addEventListener('click', function() {
+      const nav = document.querySelector('nav ul');
+      if (nav.style.display === 'flex') {
+        nav.style.display = 'none';
+      } else {
+        nav.style.display = 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.position = 'absolute';
+        nav.style.top = '80px';
+        nav.style.right = '15px';
+        nav.style.backgroundColor = '#000';
+        nav.style.padding = '15px';
+        nav.style.zIndex = '100';
+      }
+    });
+
+    // Collapsible content
+    const collapseTriggers = document.querySelectorAll('.collapse-trigger');
+    collapseTriggers.forEach(trigger => {
+      trigger.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        if (content.classList.contains('active')) {
+          content.classList.remove('active');
+          this.innerHTML = '<span class="plus-icon"></span> Show more';
+        } else {
+          content.classList.add('active');
+          this.innerHTML = 'Show less';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
